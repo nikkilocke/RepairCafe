@@ -1,0 +1,52 @@
+<head>
+	<script>
+		$(function() {
+			var table = makeForm('#form', 
+				{{Form.Options}}
+			);
+			setTimeout(function () { $('#r0cName').focus(); }, 200);
+			var overwrite = !table.data.idRepairForm;
+			table.bind('changed.field', function(e, newValue, rowData, col, input) {
+				switch(col.name) {
+					case 'Name':
+						if(overwrite) {
+							var contact = _.find(table.fields.Name.selectOptions, function(c) { return c.value == newValue });
+							if(contact) {
+								rowData.PreviousVisitor = true;
+								rowData.Name = newValue;
+								rowData.Email = contact.Email;
+								rowData.CanContact = contact.CanContact;
+								rowData.Phone = contact.Phone;
+								rowData.Postcode = contact.Postcode;
+								table.draw();
+								setTimeout(function () { $('#r0cItemForRepair').focus()}, 100);
+								return false;
+							}
+						}
+						break;
+					case 'Email':
+					case 'Phone':
+					case 'Postcode':
+						overwrite = false;
+						break;
+				}
+			});
+			$(':input[type=radio]').on('keydown', function(e) {
+				var s = String.fromCharCode(e.keyCode).toUpperCase();
+				var cell = $(this).closest('td');
+				cell.find(':input').each(function() {
+					var r = $(this);
+					var t = r.parent().text()
+					if(t.startsWith(s)) {
+						r.prop('checked', true);
+						return false;
+					}
+				});
+			});
+
+		});
+	</script>
+</head>
+<body>
+<table id="form" cellspacing="0"></table>
+</body>

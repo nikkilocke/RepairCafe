@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepairCafe", "RepairCafe\RepairCafe.csproj", "{BCBE2CB6-E927-4478-ABF8-C5C4D0594470}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCBE2CB6-E927-4478-ABF8-C5C4D0594470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBE2CB6-E927-4478-ABF8-C5C4D0594470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBE2CB6-E927-4478-ABF8-C5C4D0594470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBE2CB6-E927-4478-ABF8-C5C4D0594470}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6CF6DD3-E640-49C4-8FB1-3BAC45FF72BB}
+	EndGlobalSection
+EndGlobal
